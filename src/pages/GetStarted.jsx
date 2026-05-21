@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import getstrt from "../assets/getstrt.jpeg";
 import {
   FaUser,
   FaEnvelope,
@@ -46,7 +47,7 @@ const GetStarted = () => {
 
           <div className="absolute inset-0">
             <img
-              src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
+              src={getstrt}
               alt="Luxury Home"
               className="object-cover w-full h-full"
             />

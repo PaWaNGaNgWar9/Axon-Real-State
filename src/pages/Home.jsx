@@ -3,10 +3,10 @@ import HeroSection from "../components/HeroSection";
 import PropertyCard from "../components/PropertyCard";
 import Footer from "../components/Footer";
 
-import First from "../assets/third.jpg";
-import Second from "../assets/second.jpg";
-import Third from "../assets/first.jpg";
-import RoyalVilla from "../assets/royalvilla.jpeg";
+import first from "../assets/third.jpg";
+import second from "../assets/second.jpg";
+import third from "../assets/first.jpg";
+import royalvilla from "../assets/royalvilla.jpeg";
 import {
   FaHome,
   FaUsers,
@@ -20,7 +20,7 @@ const properties = [
     title: "Luxury Villa",
     location: "Delhi",
     price: "₹2.5 Cr",
-    image: First,
+    image: first,
   },
 
   {
@@ -28,7 +28,7 @@ const properties = [
     title: "Modern Apartment",
     location: "Mumbai",
     price: "₹1.2 Cr",
-    image: Second,
+    image: second,
   },
 
   {
@@ -36,7 +36,7 @@ const properties = [
     title: "Beach House",
     location: "Goa",
     price: "₹3.8 Cr",
-    image: Third,
+    image: third,
   },
 
   {
@@ -44,7 +44,7 @@ const properties = [
     title: "Royal Penthouse",
     location: "Bangalore",
     price: "₹5.5 Cr",
-    image: Third,
+    image: third,
   },
 
   {
@@ -52,7 +52,7 @@ const properties = [
     title: "Luxury Farmhouse",
     location: "Punjab",
     price: "₹4.2 Cr",
-    image: First,
+    image: first,
   },
 
   {
@@ -60,7 +60,7 @@ const properties = [
     title: "Modern Cottage",
     location: "Manali",
     price: "₹1.8 Cr",
-    image: Second,
+    image: second,
   },
 ];
 
@@ -138,7 +138,7 @@ const Home = () => {
           <div className="overflow-hidden shadow-2xl rounded-3xl">
 
             <img
-              src={RoyalVilla} 
+              src={royalvilla} 
               alt="Luxury Home"
               className="object-cover w-full h-full transition duration-700 hover:scale-110"
             />

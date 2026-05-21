@@ -1,15 +1,15 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import bgImage from "../assets/bg.jpeg";
-import Card1 from "../assets/card1.jpeg";
-import Card2 from "../assets/card2.jpeg";
-import Card3 from "../assets/card3.jpeg";
-import Card4 from "../assets/card4.jpeg";
-import Card5 from "../assets/card5.jpeg";
-import Card6 from "../assets/card6.jpeg";
-import RoyalVilla from "../assets/royalvilla.jpeg";
-import Hero from "../assets/hero.jpeg";
+import bgimage from "../assets/bg.jpeg";
+import card1 from "../assets/card1.jpeg";
+import card2 from "../assets/card2.jpeg";
+import card3 from "../assets/card3.jpeg";
+import card4 from "../assets/card4.jpeg";
+import card5 from "../assets/card5.jpeg";
+import card6 from "../assets/card6.jpeg";
+import royalvilla from "../assets/royalvilla.jpeg";
+import hero from "../assets/hero.jpeg";
 import  { FaMapMarkerAlt,
   FaBed,
   FaBath,
@@ -26,7 +26,7 @@ const propertiesData = [
     baths: 3,
     area: "4500 Sq.ft",
     type: "Villa",
-    image:bgImage,
+    image:bgimage,
   },
 
   {
@@ -38,7 +38,7 @@ const propertiesData = [
     baths: 2,
     area: "2200 Sq.ft",
     type: "Apartment",
-    image:Card1,
+    image:card1,
   },
 
   {
@@ -50,7 +50,7 @@ const propertiesData = [
     baths: 4,
     area: "5200 Sq.ft",
     type: "Beach House",
-    image:Card2,
+    image:card2,
   },
 
   {
@@ -62,7 +62,7 @@ const propertiesData = [
     baths: 5,
     area: "6200 Sq.ft",
     type: "Penthouse",
-    image:Card3,
+    image:card3,
   },
 
   {
@@ -74,7 +74,7 @@ const propertiesData = [
     baths: 2,
     area: "2800 Sq.ft",
     type: "Cottage",
-    image:Card4,
+    image:card4,
   },
 
   {
@@ -86,7 +86,7 @@ const propertiesData = [
     baths: 5,
     area: "8500 Sq.ft",
     type: "Farmhouse",
-    image:Card5,
+    image:card5,
   },
 
   {
@@ -98,7 +98,7 @@ const propertiesData = [
     baths: 1,
     area: "1200 Sq.ft",
     type: "Studio",
-    image:Card6,
+    image:card6,
   },
 
   {
@@ -110,7 +110,7 @@ const propertiesData = [
     baths: 8,
     area: "15000 Sq.ft",
     type: "Mansion",
-    image:RoyalVilla,
+    image:royalvilla,
   },
 ];
 
@@ -131,7 +131,7 @@ const Properties = () => {
         <div className="relative h-[70vh] flex items-center justify-center text-center px-6">
 
           <img
-            src={Hero}
+            src={hero}
             alt="hero"
             className="absolute inset-0 object-cover w-full h-full opacity-40"
           />
