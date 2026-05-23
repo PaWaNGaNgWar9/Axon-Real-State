@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -32,7 +34,6 @@ const propertiesData = [
     type: "Villa",
     image: bgimage,
   },
-
   {
     id: 2,
     title: "Modern Apartment",
@@ -44,7 +45,6 @@ const propertiesData = [
     type: "Apartment",
     image: card1,
   },
-
   {
     id: 3,
     title: "Beach House",
@@ -56,7 +56,6 @@ const propertiesData = [
     type: "Beach House",
     image: card2,
   },
-
   {
     id: 4,
     title: "Penthouse",
@@ -68,7 +67,6 @@ const propertiesData = [
     type: "Penthouse",
     image: card3,
   },
-
   {
     id: 5,
     title: "Mountain Cottage",
@@ -80,7 +78,6 @@ const propertiesData = [
     type: "Cottage",
     image: card4,
   },
-
   {
     id: 6,
     title: "Luxury Farmhouse",
@@ -92,7 +89,6 @@ const propertiesData = [
     type: "Farmhouse",
     image: card5,
   },
-
   {
     id: 7,
     title: "City Studio",
@@ -104,7 +100,6 @@ const propertiesData = [
     type: "Studio",
     image: card6,
   },
-
   {
     id: 8,
     title: "Royal Mansion",
@@ -120,6 +115,7 @@ const propertiesData = [
 
 const Properties = () => {
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
   const filteredProperties = propertiesData.filter((property) =>
     property.title.toLowerCase().includes(search.toLowerCase())
@@ -133,7 +129,6 @@ const Properties = () => {
 
         {/* Hero Section */}
         <div className="relative h-[70vh] flex items-center justify-center text-center px-6">
-
           <img
             src={hero}
             alt="hero"
@@ -141,31 +136,25 @@ const Properties = () => {
           />
 
           <div className="relative z-10">
-
             <h1 className="mb-6 text-5xl font-bold md:text-7xl text-[#F9F295]">
               Find Your Dream Property
             </h1>
 
             <p className="max-w-3xl mx-auto text-lg text-gray-300">
               Explore premium villas, apartments, penthouses, beach houses,
-              farmhouses, and luxury homes across India with modern amenities.
+              farmhouses, and luxury homes across India.
             </p>
 
-            <button className="px-8 py-4 mt-8 font-semibold text-black transition duration-300 bg-[#F9F295] rounded-xl hover:scale-105 hover:bg-[#f5ec7a]">
+            <button className="px-8 py-4 mt-8 font-semibold text-black bg-[#F9F295] rounded-xl hover:scale-105">
               Explore Now
             </button>
-
           </div>
-
         </div>
 
-        {/* Search Section */}
+        {/* Search */}
         <div className="relative z-20 max-w-6xl px-6 mx-auto -mt-12">
-
-          <div className="p-6 border shadow-2xl bg-gray-900 border-[#F9F295]/20 rounded-2xl">
-
-            <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
-
+          <div className="p-6 bg-gray-900 border rounded-2xl border-[#F9F295]/20">
+            <div className="flex overflow-hidden border rounded-xl border-[#F9F295]/20">
               <input
                 type="text"
                 placeholder="Search luxury properties..."
@@ -173,107 +162,68 @@ const Properties = () => {
                 onChange={(e) => setSearch(e.target.value)}
                 className="w-full p-5 text-white bg-black outline-none"
               />
-
               <button className="px-8 py-5 text-black bg-[#F9F295]">
                 <FaSearch />
               </button>
-
             </div>
-
           </div>
-
         </div>
 
-        {/* Property Section */}
+        {/* Cards */}
         <div className="px-6 py-20 mx-auto max-w-7xl">
 
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-12">
-
-            <div>
-
-              <h2 className="mb-2 text-4xl font-bold text-[#F9F295]">
-                Featured Properties
-              </h2>
-
-              <p className="text-gray-400">
-                Handpicked luxury properties for premium living experience.
-              </p>
-
-            </div>
-
-            <button className="px-6 py-3 transition border rounded-lg border-[#F9F295] text-[#F9F295] hover:bg-[#F9F295] hover:text-black">
-              View All
-            </button>
-
-          </div>
-
-          {/* Cards */}
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
 
             {filteredProperties.map((property) => (
               <div
                 key={property.id}
-                className="overflow-hidden transition duration-300 border shadow-xl bg-gray-900 rounded-2xl border-[#F9F295]/10 hover:border-[#F9F295] hover:-translate-y-2"
+                className="overflow-hidden transition border bg-gray-900 rounded-2xl border-[#F9F295]/10 hover:-translate-y-2"
               >
 
-                {/* Image */}
-                <div className="relative overflow-hidden">
-
+                <div className="relative">
                   <img
                     src={property.image}
                     alt={property.title}
-                    className="object-cover w-full h-64 transition duration-500 hover:scale-110"
+                    className="object-cover w-full h-64"
                   />
 
                   <button className="absolute p-3 text-red-500 bg-white rounded-full top-4 right-4">
                     <FaHeart />
                   </button>
 
-                  <span className="absolute px-4 py-1 text-sm font-semibold text-black rounded-full bottom-4 left-4 bg-[#F9F295]">
+                  <span className="absolute px-4 py-1 text-sm text-black rounded-full bottom-4 left-4 bg-[#F9F295]">
                     {property.type}
                   </span>
-
                 </div>
 
-                {/* Content */}
                 <div className="p-5">
 
-                  <h3 className="mb-2 text-2xl font-bold text-[#F9F295]">
+                  <h3 className="text-2xl font-bold text-[#F9F295]">
                     {property.title}
                   </h3>
 
-                  <div className="flex items-center gap-2 mb-4 text-gray-400">
+                  <div className="flex items-center gap-2 text-gray-400">
                     <FaMapMarkerAlt />
-                    <span>{property.location}</span>
+                    {property.location}
                   </div>
 
-                  <div className="flex items-center justify-between mb-4 text-gray-300">
-
-                    <div className="flex items-center gap-2">
-                      <FaBed />
-                      <span>{property.beds} Beds</span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <FaBath />
-                      <span>{property.baths} Baths</span>
-                    </div>
-
+                  <div className="flex justify-between mt-3 text-gray-300">
+                    <span><FaBed /> {property.beds}</span>
+                    <span><FaBath /> {property.baths}</span>
                   </div>
 
-                  <div className="mb-5">
-                    <p className="text-gray-400">
-                      Area: {property.area}
-                    </p>
-                  </div>
+                  <p className="mt-2 text-gray-400">{property.area}</p>
 
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mt-4">
 
-                    <h4 className="text-2xl font-bold text-[#F9F295]">
+                    <h4 className="text-xl font-bold text-[#F9F295]">
                       {property.price}
                     </h4>
 
-                    <button className="px-5 py-2 font-semibold text-black transition rounded-lg bg-[#F9F295] hover:bg-[#f5ec7a]">
+                    <button
+                      onClick={() => navigate(`/property/${property.id}`)}
+                      className="px-5 py-2 text-black bg-[#F9F295] rounded-lg"
+                    >
                       Details
                     </button>
 
@@ -283,56 +233,6 @@ const Properties = () => {
 
               </div>
             ))}
-          </div>
-
-          {/* Empty State */}
-          {filteredProperties.length === 0 && (
-            <div className="mt-20 text-center">
-
-              <h2 className="mb-4 text-4xl font-bold text-[#F9F295]">
-                No Property Found
-              </h2>
-
-              <p className="text-gray-400">
-                Try another keyword for better results.
-              </p>
-
-            </div>
-          )}
-        </div>
-
-        {/* Stats Section */}
-        <div className="px-6 py-20 bg-gray-900">
-
-          <div className="grid max-w-6xl gap-8 mx-auto text-center md:grid-cols-4">
-
-            <div>
-              <h2 className="mb-3 text-5xl font-bold text-[#F9F295]">
-                500+
-              </h2>
-              <p className="text-gray-400">Luxury Properties</p>
-            </div>
-
-            <div>
-              <h2 className="mb-3 text-5xl font-bold text-[#F9F295]">
-                1200+
-              </h2>
-              <p className="text-gray-400">Happy Clients</p>
-            </div>
-
-            <div>
-              <h2 className="mb-3 text-5xl font-bold text-[#F9F295]">
-                50+
-              </h2>
-              <p className="text-gray-400">Cities Covered</p>
-            </div>
-
-            <div>
-              <h2 className="mb-3 text-5xl font-bold text-[#F9F295]">
-                10+
-              </h2>
-              <p className="text-gray-400">Years Experience</p>
-            </div>
 
           </div>
 

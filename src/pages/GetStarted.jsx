@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
+import { Link } from "react-router-dom";
 import getstrt from "../assets/getstrt.jpeg";
 
 import {
@@ -15,6 +15,8 @@ import {
 } from "react-icons/fa";
 
 const GetStarted = () => {
+  const [loading, setLoading] = useState(false);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,12 +32,31 @@ const GetStarted = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    setLoading(true);
 
-    alert("Your request has been submitted successfully!");
+    try {
+      console.log(formData);
+
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      alert("Your request has been submitted successfully!");
+
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        propertyType: "",
+        city: "",
+      });
+    } catch (error) {
+      console.error(error);
+      alert("Something went wrong!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -48,15 +69,12 @@ const GetStarted = () => {
         <div className="relative flex items-center justify-center h-[70vh] px-6 text-center overflow-hidden">
 
           <div className="absolute inset-0">
-
             <img
               src={getstrt}
               alt="Luxury Home"
               className="object-cover w-full h-full"
             />
-
             <div className="absolute inset-0 bg-black/70"></div>
-
           </div>
 
           <div className="relative z-10 max-w-4xl">
@@ -65,15 +83,15 @@ const GetStarted = () => {
               Start Your Luxury Journey
             </h1>
 
-            <p className="text-lg leading-relaxed text-gray-300 md:text-xl">
-              Connect with premium real estate experts and discover luxury
-              villas, apartments, penthouses, and dream homes tailored to your
-              lifestyle.
+            <p className="text-lg text-gray-300 md:text-xl">
+              Connect with premium real estate experts and discover luxury homes tailored for you.
             </p>
 
-            <button className="px-8 py-4 mt-8 font-semibold text-black transition duration-300 rounded-xl bg-[#F9F295] hover:scale-105 hover:bg-[#f5ec7a]">
-              Explore Properties
-            </button>
+             <Link
+              to="/properties"
+              className="inline-block px-8 py-4 mt-8 font-semibold text-black transition duration-300 bg-[#F9F295] rounded-xl hover:scale-105 hover:bg-[#f5ec7a]">
+              Explore More
+            </Link>
 
           </div>
 
@@ -82,89 +100,55 @@ const GetStarted = () => {
         {/* Main Section */}
         <div className="grid gap-12 px-6 py-20 mx-auto max-w-7xl lg:grid-cols-2">
 
-          {/* Left Content */}
+          {/* Left Side */}
           <div>
 
             <h2 className="mb-6 text-4xl font-bold text-[#F9F295]">
-              Why Choose Axon Real Estate?
+              Why Choose Us?
             </h2>
 
-            <p className="mb-10 text-lg leading-relaxed text-gray-400">
-              We provide premium real estate solutions with trusted agents,
-              luxury properties, modern architecture, and personalized
-              consultation services across India.
+            <p className="mb-10 text-lg text-gray-400">
+              We provide luxury real estate solutions with trusted experts and premium properties.
             </p>
 
             <div className="space-y-6">
 
-              <div className="flex items-start gap-4 p-5 border bg-gray-900 rounded-2xl border-[#F9F295]/10">
+              {[
+                {
+                  title: "Trusted Property Experts",
+                  desc: "Professional guidance from experienced consultants.",
+                },
+                {
+                  title: "Premium Locations",
+                  desc: "Top cities and investment zones across India.",
+                },
+                {
+                  title: "Modern Luxury Living",
+                  desc: "Smart homes with world-class amenities.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-start gap-4 p-5 border bg-gray-900 rounded-2xl border-[#F9F295]/10"
+                >
+                  <div className="p-3 text-black rounded-full bg-[#F9F295]">
+                    <FaCheckCircle />
+                  </div>
 
-                <div className="p-3 text-black rounded-full bg-[#F9F295]">
-                  <FaCheckCircle />
+                  <div>
+                    <h3 className="mb-2 text-xl font-semibold text-[#F9F295]">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-400">{item.desc}</p>
+                  </div>
                 </div>
-
-                <div>
-
-                  <h3 className="mb-2 text-xl font-semibold text-[#F9F295]">
-                    Trusted Property Experts
-                  </h3>
-
-                  <p className="text-gray-400">
-                    Professional guidance from experienced luxury property
-                    consultants.
-                  </p>
-
-                </div>
-
-              </div>
-
-              <div className="flex items-start gap-4 p-5 border bg-gray-900 rounded-2xl border-[#F9F295]/10">
-
-                <div className="p-3 text-black rounded-full bg-[#F9F295]">
-                  <FaCheckCircle />
-                </div>
-
-                <div>
-
-                  <h3 className="mb-2 text-xl font-semibold text-[#F9F295]">
-                    Premium Locations
-                  </h3>
-
-                  <p className="text-gray-400">
-                    Discover luxury homes in India’s top residential cities and
-                    prime investment zones.
-                  </p>
-
-                </div>
-
-              </div>
-
-              <div className="flex items-start gap-4 p-5 border bg-gray-900 rounded-2xl border-[#F9F295]/10">
-
-                <div className="p-3 text-black rounded-full bg-[#F9F295]">
-                  <FaCheckCircle />
-                </div>
-
-                <div>
-
-                  <h3 className="mb-2 text-xl font-semibold text-[#F9F295]">
-                    Modern Luxury Living
-                  </h3>
-
-                  <p className="text-gray-400">
-                    Explore world-class amenities, smart homes, and premium
-                    architecture.
-                  </p>
-
-                </div>
-
-              </div>
+              ))}
 
             </div>
 
           </div>
 
-          {/* Form Section */}
+          {/* Right Side Form */}
           <div className="p-8 border shadow-2xl bg-gray-900 rounded-3xl border-[#F9F295]/10">
 
             <h2 className="mb-3 text-4xl font-bold text-[#F9F295]">
@@ -172,159 +156,49 @@ const GetStarted = () => {
             </h2>
 
             <p className="mb-8 text-gray-400">
-              Fill in your details and our team will contact you shortly.
+              Fill in your details and we will contact you soon.
             </p>
 
             <form onSubmit={handleSubmit} className="space-y-6">
 
               {/* Name */}
-              <div>
-
-                <label className="block mb-2 text-sm text-gray-300">
-                  Full Name
-                </label>
-
-                <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
-
-                  <span className="px-4 text-[#F9F295]">
-                    <FaUser />
-                  </span>
-
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Enter your full name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full p-4 text-white bg-black outline-none"
-                    required
-                  />
-
-                </div>
-
-              </div>
+              <Input icon={<FaUser />} name="name" value={formData.name} onChange={handleChange} placeholder="Full Name" />
 
               {/* Email */}
-              <div>
-
-                <label className="block mb-2 text-sm text-gray-300">
-                  Email Address
-                </label>
-
-                <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
-
-                  <span className="px-4 text-[#F9F295]">
-                    <FaEnvelope />
-                  </span>
-
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter your email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full p-4 text-white bg-black outline-none"
-                    required
-                  />
-
-                </div>
-
-              </div>
+              <Input icon={<FaEnvelope />} name="email" value={formData.email} onChange={handleChange} placeholder="Email Address" type="email" />
 
               {/* Phone */}
-              <div>
-
-                <label className="block mb-2 text-sm text-gray-300">
-                  Phone Number
-                </label>
-
-                <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
-
-                  <span className="px-4 text-[#F9F295]">
-                    <FaPhoneAlt />
-                  </span>
-
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Enter your phone number"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full p-4 text-white bg-black outline-none"
-                    required
-                  />
-
-                </div>
-
-              </div>
+              <Input icon={<FaPhoneAlt />} name="phone" value={formData.phone} onChange={handleChange} placeholder="Phone Number" type="tel" />
 
               {/* Property Type */}
-              <div>
-
-                <label className="block mb-2 text-sm text-gray-300">
-                  Property Type
-                </label>
-
-                <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
-
-                  <span className="px-4 text-[#F9F295]">
-                    <FaHome />
-                  </span>
-
-                  <select
-                    name="propertyType"
-                    value={formData.propertyType}
-                    onChange={handleChange}
-                    className="w-full p-4 text-white bg-black outline-none"
-                    required
-                  >
-                    <option value="">Select Property Type</option>
-                    <option value="Villa">Villa</option>
-                    <option value="Apartment">Apartment</option>
-                    <option value="Penthouse">Penthouse</option>
-                    <option value="Farmhouse">Farmhouse</option>
-                  </select>
-
-                </div>
-
+              <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
+                <span className="px-4 text-[#F9F295]"><FaHome /></span>
+                <select
+                  name="propertyType"
+                  value={formData.propertyType}
+                  onChange={handleChange}
+                  className="w-full p-4 text-white bg-black outline-none"
+                  required
+                >
+                  <option value="">Select Property Type</option>
+                  <option value="Villa">Villa</option>
+                  <option value="Apartment">Apartment</option>
+                  <option value="Penthouse">Penthouse</option>
+                  <option value="Farmhouse">Farmhouse</option>
+                </select>
               </div>
 
               {/* City */}
-              <div>
-
-                <label className="block mb-2 text-sm text-gray-300">
-                  Preferred City
-                </label>
-
-                <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
-
-                  <span className="px-4 text-[#F9F295]">
-                    <FaMapMarkerAlt />
-                  </span>
-
-                  <input
-                    type="text"
-                    name="city"
-                    placeholder="Enter preferred city"
-                    value={formData.city}
-                    onChange={handleChange}
-                    className="w-full p-4 text-white bg-black outline-none"
-                    required
-                  />
-
-                </div>
-
-              </div>
+              <Input icon={<FaMapMarkerAlt />} name="city" value={formData.city} onChange={handleChange} placeholder="Preferred City" />
 
               {/* Button */}
               <button
                 type="submit"
-                className="flex items-center justify-center w-full gap-3 py-4 font-semibold text-black transition duration-300 rounded-xl bg-[#F9F295] hover:bg-[#f5ec7a] hover:scale-[1.02]"
+                disabled={loading}
+                className="flex items-center justify-center w-full gap-3 py-4 font-semibold text-black transition rounded-xl bg-[#F9F295] hover:bg-[#f5ec7a] disabled:opacity-50"
               >
-
-                Submit Request
+                {loading ? "Submitting..." : "Submit Request"}
                 <FaArrowRight />
-
               </button>
 
             </form>
@@ -339,5 +213,17 @@ const GetStarted = () => {
     </>
   );
 };
+
+/* Reusable Input Component */
+const Input = ({ icon, ...props }) => (
+  <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
+    <span className="px-4 text-[#F9F295]">{icon}</span>
+    <input
+      {...props}
+      className="w-full p-4 text-white bg-black outline-none"
+      required
+    />
+  </div>
+);
 
 export default GetStarted;

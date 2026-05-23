@@ -2,21 +2,27 @@ import { useParams, Link } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-
 import first from "../assets/First.jpg";
 import second from "../assets/Second.jpg";
 import third from "../assets/Third.jpg";
+import bgimage from "../assets/Bg.jpeg";
+import card1 from "../assets/card1.jpeg";
+import card2 from "../assets/Card2.jpeg";
+import card3 from "../assets/Card3.jpeg";
+import card4 from "../assets/Card4.jpeg";
+import card5 from "../assets/Card5.jpeg";
+import card6 from "../assets/Card6.jpeg";
+import royalvilla from "../assets/royalvilla.jpeg";
 
 import {
+  FaMapMarkerAlt,
   FaBed,
   FaBath,
-  FaMapMarkerAlt,
-  FaRulerCombined,
   FaArrowLeft,
 } from "react-icons/fa";
 
-const properties = [
-  {
+const propertiesData = [
+    {
     id: 1,
     title: "Luxury Villa",
     location: "Delhi",
@@ -81,39 +87,131 @@ const properties = [
     baths: 2,
     area: "3500",
   },
+  {
+    id: 1,
+    title: "Luxury Villa",
+    location: "Delhi",
+    price: "₹2.5 Cr",
+    beds: 4,
+    baths: 3,
+    area: "4500 Sq.ft",
+    type: "Villa",
+    image: bgimage,
+    description:
+      "Luxury villa with premium interiors, private garden, swimming pool, and smart home features.",
+  },
+
+  {
+    id: 2,
+    title: "Modern Apartment",
+    location: "Mumbai",
+    price: "₹1.2 Cr",
+    beds: 3,
+    baths: 2,
+    area: "2200 Sq.ft",
+    type: "Apartment",
+    image: card1,
+    description:
+      "Modern apartment located in the heart of Mumbai with elegant interiors and luxury amenities.",
+  },
+
+  {
+    id: 3,
+    title: "Beach House",
+    location: "Goa",
+    price: "₹3.8 Cr",
+    beds: 5,
+    baths: 4,
+    area: "5200 Sq.ft",
+    type: "Beach House",
+    image: card2,
+    description:
+      "Beautiful beach house with sea-facing balcony and modern architecture.",
+  },
+
+  {
+    id: 4,
+    title: "Penthouse",
+    location: "Bangalore",
+    price: "₹4.5 Cr",
+    beds: 6,
+    baths: 5,
+    area: "6200 Sq.ft",
+    type: "Penthouse",
+    image: card3,
+    description:
+      "Luxury penthouse with rooftop lounge and skyline city views.",
+  },
+
+  {
+    id: 5,
+    title: "Mountain Cottage",
+    location: "Manali",
+    price: "₹1.8 Cr",
+    beds: 3,
+    baths: 2,
+    area: "2800 Sq.ft",
+    type: "Cottage",
+    image: card4,
+    description:
+      "Cozy mountain cottage surrounded by nature and scenic landscapes.",
+  },
+
+  {
+    id: 6,
+    title: "Luxury Farmhouse",
+    location: "Punjab",
+    price: "₹5.2 Cr",
+    beds: 7,
+    baths: 5,
+    area: "8500 Sq.ft",
+    type: "Farmhouse",
+    image: card5,
+    description:
+      "Spacious farmhouse with private garden and luxurious amenities.",
+  },
+
+  {
+    id: 7,
+    title: "City Studio",
+    location: "Pune",
+    price: "₹75 Lakh",
+    beds: 2,
+    baths: 1,
+    area: "1200 Sq.ft",
+    type: "Studio",
+    image: card6,
+    description:
+      "Compact modern studio apartment perfect for urban living.",
+  },
+
+  {
+    id: 8,
+    title: "Royal Mansion",
+    location: "Jaipur",
+    price: "₹9 Cr",
+    beds: 10,
+    baths: 8,
+    area: "15000 Sq.ft",
+    type: "Mansion",
+    image: royalvilla,
+    description:
+      "Ultra luxury royal mansion with grand interiors and premium lifestyle facilities.",
+  },
 ];
 
 const PropertyDetails = () => {
-
   const { id } = useParams();
 
-  const property = properties.find(
+  const property = propertiesData.find(
     (item) => item.id === Number(id)
   );
 
-  // Property Not Found
   if (!property) {
     return (
-      <>
-        <Navbar />
-
-        <div className="flex flex-col items-center justify-center min-h-screen text-white bg-black">
-
-          <h1 className="mb-6 text-5xl font-bold text-[#F9F295]">
-            Property Not Found
-          </h1>
-
-          <Link
-            to="/"
-            className="px-8 py-4 font-semibold text-black rounded-xl bg-[#F9F295]"
-          >
-            Back To Home
-          </Link>
-
-        </div>
-
-        <Footer />
-      </>
+      <div className="flex items-center justify-center min-h-screen text-4xl font-bold text-white bg-black">
+        Property Not Found
+      </div>
     );
   }
 
@@ -121,71 +219,60 @@ const PropertyDetails = () => {
     <>
       <Navbar />
 
-      <section className="min-h-screen px-6 py-20 text-white bg-black">
+      <div className="min-h-screen px-6 py-20 text-white bg-black">
 
-        <div className="mx-auto max-w-7xl">
+        <div className="max-w-6xl mx-auto">
 
-          {/* Back Button */}
           <Link
-            to="/"
-            className="inline-flex items-center gap-3 px-6 py-3 mb-10 font-semibold text-black transition rounded-xl bg-[#F9F295] hover:bg-[#f5ec7a]"
+            to="/properties"
+            className="inline-flex items-center gap-3 px-6 py-3 mb-10 font-semibold text-black transition bg-[#F9F295] rounded-xl hover:bg-[#f5ec7a]"
           >
             <FaArrowLeft />
             Back
           </Link>
 
-          {/* Image */}
-          <div className="mb-10 overflow-hidden rounded-3xl">
+          <div className="grid gap-12 lg:grid-cols-2">
 
-            <img
-              src={property.image}
-              alt={property.title}
-              className="object-cover w-full h-[500px]"
-            />
-
-          </div>
-
-          {/* Content */}
-          <div className="grid gap-14 lg:grid-cols-2">
-
-            {/* Left */}
             <div>
 
-              <h1 className="mb-6 text-6xl font-bold text-[#F9F295]">
-                {property.title}
-              </h1>
-
-              <div className="flex items-center mb-8 text-xl text-gray-400">
-
-                <FaMapMarkerAlt className="mr-3 text-[#F9F295]" />
-
-                {property.location}
-
-              </div>
-
-              <p className="leading-9 text-gray-300">
-                Experience luxury living with premium interiors,
-                modern architecture, spacious rooms, elegant design,
-                and world-class amenities for a comfortable lifestyle.
-              </p>
+              <img
+                src={property.image}
+                alt={property.title}
+                className="object-cover w-full shadow-2xl h-[500px] rounded-3xl"
+              />
 
             </div>
 
-            {/* Right */}
-            <div className="p-10 bg-gray-900 border rounded-3xl border-white/10">
+            <div>
 
-              <h2 className="mb-8 text-5xl font-bold text-[#F9F295]">
+              <span className="px-5 py-2 text-sm font-semibold text-black rounded-full bg-[#F9F295]">
+                {property.type}
+              </span>
+
+              <h1 className="mt-6 text-5xl font-bold text-[#F9F295]">
+                {property.title}
+              </h1>
+
+              <div className="flex items-center gap-3 mt-5 text-gray-400">
+                <FaMapMarkerAlt className="text-[#F9F295]" />
+                <span>{property.location}</span>
+              </div>
+
+              <h2 className="mt-8 text-4xl font-bold text-white">
                 {property.price}
               </h2>
 
-              <div className="grid grid-cols-3 gap-6 mb-10">
+              <p className="mt-8 text-lg leading-8 text-gray-400">
+                {property.description}
+              </p>
 
-                {/* Beds */}
-                <div className="p-6 text-center bg-black rounded-2xl">
+              <div className="grid grid-cols-3 gap-5 mt-10">
 
-                  <FaBed className="mx-auto mb-3 text-2xl text-[#F9F295]" />
+                <div className="p-6 text-center bg-gray-900 rounded-2xl">
 
-                  <h3 className="text-2xl font-bold text-white">
+                  <FaBed className="mx-auto mb-3 text-3xl text-[#F9F295]" />
+
+                  <h3 className="text-2xl font-bold">
                     {property.beds}
                   </h3>
 
@@ -195,12 +282,11 @@ const PropertyDetails = () => {
 
                 </div>
 
-                {/* Baths */}
-                <div className="p-6 text-center bg-black rounded-2xl">
+                <div className="p-6 text-center bg-gray-900 rounded-2xl">
 
-                  <FaBath className="mx-auto mb-3 text-2xl text-[#F9F295]" />
+                  <FaBath className="mx-auto mb-3 text-3xl text-[#F9F295]" />
 
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="text-2xl font-bold">
                     {property.baths}
                   </h3>
 
@@ -210,27 +296,23 @@ const PropertyDetails = () => {
 
                 </div>
 
-                {/* Area */}
-                <div className="p-6 text-center bg-black rounded-2xl">
+                <div className="p-6 text-center bg-gray-900 rounded-2xl">
 
-                  <FaRulerCombined className="mx-auto mb-3 text-2xl text-[#F9F295]" />
-
-                  <h3 className="text-2xl font-bold text-white">
+                  <h3 className="mb-3 text-2xl font-bold text-[#F9F295]">
                     {property.area}
                   </h3>
 
                   <p className="text-gray-400">
-                    Sq.ft
+                    Area
                   </p>
 
                 </div>
 
               </div>
 
-              {/* Button */}
               <Link
                 to="/contact"
-                className="block w-full py-5 font-bold text-center text-black transition rounded-2xl bg-[#F9F295] hover:bg-[#f5ec7a]"
+                className="inline-block px-10 py-4 mt-10 font-bold text-black transition bg-[#F9F295] rounded-xl hover:bg-[#f5ec7a]"
               >
                 Contact Agent
               </Link>
@@ -241,7 +323,7 @@ const PropertyDetails = () => {
 
         </div>
 
-      </section>
+      </div>
 
       <Footer />
     </>
