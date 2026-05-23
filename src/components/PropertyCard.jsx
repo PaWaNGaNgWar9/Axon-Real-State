@@ -40,7 +40,7 @@ const PropertyCard = ({ property }) => {
         <div className="flex items-center justify-between mb-4">
 
           <h3 className="text-3xl font-bold text-gold">
-            ₹ {property.price}
+            {property.price}
           </h3>
 
           <span className="text-sm text-gray-400">
