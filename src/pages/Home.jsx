@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import first from "../assets/First.jpg";
 import second from "../assets/Second.jpg";
 import third from "../assets/Third.jpg";
-import royalvilla from "../assets/Royalvilla.jpeg";
+import royalvilla from "../assets/royalvilla.jpeg";
 import {
   FaHome,
   FaUsers,

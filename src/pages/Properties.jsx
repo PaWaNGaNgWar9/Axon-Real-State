@@ -2,13 +2,13 @@ import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import bgimage from "../assets/Bg.jpeg";
-import card1 from  "../assets/Card1.jpeg";
+import card1 from  "../assets/card1.jpeg";
 import card2 from  "../assets/Card2.jpeg";
 import card3 from "../assets/Card3.jpeg";
 import card4 from "../assets/Card4.jpeg";
 import card5 from "../assets/Card5.jpeg";
 import card6 from "../assets/Card6.jpeg";
-import royalvilla from "../assets/Royalvilla.jpeg";
+import royalvilla from "../assets/royalvilla.jpeg";
 import hero from "../assets/Hero.jpeg";
 import  { FaMapMarkerAlt,
   FaBed,
