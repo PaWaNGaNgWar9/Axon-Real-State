@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import BgImage from "../assets/Bg.jpeg";
 import {
   FaArrowRight,
   FaPlay,
@@ -10,8 +11,7 @@ const HeroSection = () => {
     <section
       className="relative flex items-center justify-center min-h-screen overflow-hidden bg-center bg-cover"
       style={{
-        backgroundImage:
-          "url('https://images.unsplash.com/photo-1600585154526-990dced4db0d')",
+        backgroundImage:`url(${BgImage})`,
       }}
     >
       {/* Overlay */}
