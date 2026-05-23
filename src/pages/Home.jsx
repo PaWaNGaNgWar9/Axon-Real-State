@@ -3,9 +3,9 @@ import HeroSection from "../components/HeroSection";
 import PropertyCard from "../components/PropertyCard";
 import Footer from "../components/Footer";
 
-import first from "../assets/first.jpg";
-import second from "../assets/second.jpg";
-import third from "../assets/third.jpg";
+import first from "../assets/First.jpg";
+import second from "../assets/Second.jpg";
+import third from "../assets/Third.jpg";
 import royalvilla from "../assets/royalvilla.jpeg";
 import {
   FaHome,
