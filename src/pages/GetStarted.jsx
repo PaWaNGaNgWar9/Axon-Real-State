@@ -1,7 +1,9 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
 import getstrt from "../assets/getstrt.jpeg";
+
 import {
   FaUser,
   FaEnvelope,
@@ -46,6 +48,7 @@ const GetStarted = () => {
         <div className="relative flex items-center justify-center h-[70vh] px-6 text-center overflow-hidden">
 
           <div className="absolute inset-0">
+
             <img
               src={getstrt}
               alt="Luxury Home"
@@ -53,11 +56,12 @@ const GetStarted = () => {
             />
 
             <div className="absolute inset-0 bg-black/70"></div>
+
           </div>
 
           <div className="relative z-10 max-w-4xl">
 
-            <h1 className="mb-6 text-5xl font-bold md:text-7xl text-gold">
+            <h1 className="mb-6 text-5xl font-bold md:text-7xl text-[#F9F295]">
               Start Your Luxury Journey
             </h1>
 
@@ -67,11 +71,12 @@ const GetStarted = () => {
               lifestyle.
             </p>
 
-            <button className="px-8 py-4 mt-8 font-semibold text-black transition duration-300 rounded-xl bg-gold hover:scale-105">
+            <button className="px-8 py-4 mt-8 font-semibold text-black transition duration-300 rounded-xl bg-[#F9F295] hover:scale-105 hover:bg-[#f5ec7a]">
               Explore Properties
             </button>
 
           </div>
+
         </div>
 
         {/* Main Section */}
@@ -80,7 +85,7 @@ const GetStarted = () => {
           {/* Left Content */}
           <div>
 
-            <h2 className="mb-6 text-4xl font-bold text-gold">
+            <h2 className="mb-6 text-4xl font-bold text-[#F9F295]">
               Why Choose Axon Real Estate?
             </h2>
 
@@ -92,14 +97,15 @@ const GetStarted = () => {
 
             <div className="space-y-6">
 
-              <div className="flex items-start gap-4 p-5 border bg-grayDark rounded-2xl border-gold/10">
+              <div className="flex items-start gap-4 p-5 border bg-gray-900 rounded-2xl border-[#F9F295]/10">
 
-                <div className="p-3 text-black rounded-full bg-gold">
+                <div className="p-3 text-black rounded-full bg-[#F9F295]">
                   <FaCheckCircle />
                 </div>
 
                 <div>
-                  <h3 className="mb-2 text-xl font-semibold text-gold">
+
+                  <h3 className="mb-2 text-xl font-semibold text-[#F9F295]">
                     Trusted Property Experts
                   </h3>
 
@@ -107,18 +113,20 @@ const GetStarted = () => {
                     Professional guidance from experienced luxury property
                     consultants.
                   </p>
+
                 </div>
 
               </div>
 
-              <div className="flex items-start gap-4 p-5 border bg-grayDark rounded-2xl border-gold/10">
+              <div className="flex items-start gap-4 p-5 border bg-gray-900 rounded-2xl border-[#F9F295]/10">
 
-                <div className="p-3 text-black rounded-full bg-gold">
+                <div className="p-3 text-black rounded-full bg-[#F9F295]">
                   <FaCheckCircle />
                 </div>
 
                 <div>
-                  <h3 className="mb-2 text-xl font-semibold text-gold">
+
+                  <h3 className="mb-2 text-xl font-semibold text-[#F9F295]">
                     Premium Locations
                   </h3>
 
@@ -126,18 +134,20 @@ const GetStarted = () => {
                     Discover luxury homes in India’s top residential cities and
                     prime investment zones.
                   </p>
+
                 </div>
 
               </div>
 
-              <div className="flex items-start gap-4 p-5 border bg-grayDark rounded-2xl border-gold/10">
+              <div className="flex items-start gap-4 p-5 border bg-gray-900 rounded-2xl border-[#F9F295]/10">
 
-                <div className="p-3 text-black rounded-full bg-gold">
+                <div className="p-3 text-black rounded-full bg-[#F9F295]">
                   <FaCheckCircle />
                 </div>
 
                 <div>
-                  <h3 className="mb-2 text-xl font-semibold text-gold">
+
+                  <h3 className="mb-2 text-xl font-semibold text-[#F9F295]">
                     Modern Luxury Living
                   </h3>
 
@@ -145,17 +155,19 @@ const GetStarted = () => {
                     Explore world-class amenities, smart homes, and premium
                     architecture.
                   </p>
+
                 </div>
 
               </div>
 
             </div>
+
           </div>
 
           {/* Form Section */}
-          <div className="p-8 border shadow-2xl bg-grayDark rounded-3xl border-gold/10">
+          <div className="p-8 border shadow-2xl bg-gray-900 rounded-3xl border-[#F9F295]/10">
 
-            <h2 className="mb-3 text-4xl font-bold text-gold">
+            <h2 className="mb-3 text-4xl font-bold text-[#F9F295]">
               Get Started Today
             </h2>
 
@@ -167,13 +179,14 @@ const GetStarted = () => {
 
               {/* Name */}
               <div>
+
                 <label className="block mb-2 text-sm text-gray-300">
                   Full Name
                 </label>
 
-                <div className="flex items-center overflow-hidden border rounded-xl border-gold/20">
+                <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
 
-                  <span className="px-4 text-gold">
+                  <span className="px-4 text-[#F9F295]">
                     <FaUser />
                   </span>
 
@@ -188,17 +201,19 @@ const GetStarted = () => {
                   />
 
                 </div>
+
               </div>
 
               {/* Email */}
               <div>
+
                 <label className="block mb-2 text-sm text-gray-300">
                   Email Address
                 </label>
 
-                <div className="flex items-center overflow-hidden border rounded-xl border-gold/20">
+                <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
 
-                  <span className="px-4 text-gold">
+                  <span className="px-4 text-[#F9F295]">
                     <FaEnvelope />
                   </span>
 
@@ -213,17 +228,19 @@ const GetStarted = () => {
                   />
 
                 </div>
+
               </div>
 
               {/* Phone */}
               <div>
+
                 <label className="block mb-2 text-sm text-gray-300">
                   Phone Number
                 </label>
 
-                <div className="flex items-center overflow-hidden border rounded-xl border-gold/20">
+                <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
 
-                  <span className="px-4 text-gold">
+                  <span className="px-4 text-[#F9F295]">
                     <FaPhoneAlt />
                   </span>
 
@@ -238,17 +255,19 @@ const GetStarted = () => {
                   />
 
                 </div>
+
               </div>
 
               {/* Property Type */}
               <div>
+
                 <label className="block mb-2 text-sm text-gray-300">
                   Property Type
                 </label>
 
-                <div className="flex items-center overflow-hidden border rounded-xl border-gold/20">
+                <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
 
-                  <span className="px-4 text-gold">
+                  <span className="px-4 text-[#F9F295]">
                     <FaHome />
                   </span>
 
@@ -267,17 +286,19 @@ const GetStarted = () => {
                   </select>
 
                 </div>
+
               </div>
 
               {/* City */}
               <div>
+
                 <label className="block mb-2 text-sm text-gray-300">
                   Preferred City
                 </label>
 
-                <div className="flex items-center overflow-hidden border rounded-xl border-gold/20">
+                <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
 
-                  <span className="px-4 text-gold">
+                  <span className="px-4 text-[#F9F295]">
                     <FaMapMarkerAlt />
                   </span>
 
@@ -292,20 +313,28 @@ const GetStarted = () => {
                   />
 
                 </div>
+
               </div>
 
               {/* Button */}
               <button
                 type="submit"
-                className="flex items-center justify-center w-full gap-3 py-4 font-semibold text-black transition duration-300 rounded-xl bg-gold hover:bg-yellow-400 hover:scale-[1.02]"
+                className="flex items-center justify-center w-full gap-3 py-4 font-semibold text-black transition duration-300 rounded-xl bg-[#F9F295] hover:bg-[#f5ec7a] hover:scale-[1.02]"
               >
+
                 Submit Request
                 <FaArrowRight />
+
               </button>
+
             </form>
+
           </div>
+
         </div>
-        </div>
+
+      </div>
+
       <Footer />
     </>
   );

@@ -8,8 +8,10 @@ import {
   FaBuilding,
   FaPhoneAlt,
 } from "react-icons/fa";
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+
   const navLinks = [
     {
       id: 1,
@@ -31,20 +33,24 @@ const Navbar = () => {
       path: "/contact",
       icon: <FaPhoneAlt />,
     },
+    {
+      id: 4,
+      name: "About",
+      path: "/about",
+      icon: <FaBuilding />,
+    },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 border-b shadow-lg bg-black/95 backdrop-blur-lg border-gold/20">
+    <nav className="sticky top-0 z-50 border-b shadow-lg bg-black/95 backdrop-blur-lg border-[#F9F295]/20">
 
       <div className="flex items-center justify-between px-6 py-5 mx-auto max-w-7xl">
 
         {/* Logo */}
         <Link to="/">
-
-          <h1 className="text-4xl font-extrabold tracking-wider transition duration-300 text-gold hover:scale-105">
+          <h1 className="text-4xl font-extrabold tracking-wider transition duration-300 text-[#F9F295] hover:scale-105">
             AXON
           </h1>
-
         </Link>
 
         {/* Desktop Menu */}
@@ -55,9 +61,9 @@ const Navbar = () => {
               key={link.id}
               to={link.path}
               className={({ isActive }) =>
-                `flex items-center gap-2 text-lg font-medium transition duration-300 hover:text-gold ${
+                `flex items-center gap-2 text-lg font-medium transition duration-300 hover:text-[#F9F295] ${
                   isActive
-                    ? "text-gold"
+                    ? "text-[#F9F295]"
                     : "text-white"
                 }`
               }
@@ -68,7 +74,7 @@ const Navbar = () => {
           ))}
 
           {/* CTA Button */}
-          <button className="px-6 py-3 font-semibold text-black transition duration-300 rounded-xl bg-gold hover:scale-105 hover:bg-yellow-400">
+          <button className="px-6 py-3 font-semibold text-black transition duration-300 rounded-xl bg-[#F9F295] hover:scale-105 hover:bg-[#f5ec7a]">
             <Link to="/get-started">Get Started</Link>
           </button>
 
@@ -76,7 +82,7 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="text-3xl text-gold md:hidden"
+          className="text-3xl text-[#F9F295] md:hidden"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
@@ -86,7 +92,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden bg-black border-t border-gold/20 overflow-hidden transition-all duration-500 ${
+        className={`md:hidden bg-black border-t border-[#F9F295]/20 overflow-hidden transition-all duration-500 ${
           menuOpen
             ? "max-h-[500px] py-6"
             : "max-h-0"
@@ -101,9 +107,9 @@ const Navbar = () => {
               to={link.path}
               onClick={() => setMenuOpen(false)}
               className={({ isActive }) =>
-                `flex items-center gap-3 text-lg font-medium transition duration-300 hover:text-gold ${
+                `flex items-center gap-3 text-lg font-medium transition duration-300 hover:text-[#F9F295] ${
                   isActive
-                    ? "text-gold"
+                    ? "text-[#F9F295]"
                     : "text-white"
                 }`
               }
@@ -114,8 +120,8 @@ const Navbar = () => {
           ))}
 
           {/* Mobile Button */}
-          <button className="w-full py-3 mt-4 font-semibold text-black transition duration-300 rounded-xl bg-gold hover:bg-yellow-400">
-            <Link to="/get-started" >Get Started</Link>
+          <button className="w-full py-3 mt-4 font-semibold text-black transition duration-300 rounded-xl bg-[#F9F295] hover:bg-[#f5ec7a]">
+            <Link to="/get-started">Get Started</Link>
           </button>
 
         </div>

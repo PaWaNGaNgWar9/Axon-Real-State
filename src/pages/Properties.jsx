@@ -1,21 +1,25 @@
 import { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+
 import bgimage from "../assets/Bg.jpeg";
-import card1 from  "../assets/card1.jpeg";
-import card2 from  "../assets/Card2.jpeg";
+import card1 from "../assets/card1.jpeg";
+import card2 from "../assets/Card2.jpeg";
 import card3 from "../assets/Card3.jpeg";
 import card4 from "../assets/Card4.jpeg";
 import card5 from "../assets/Card5.jpeg";
 import card6 from "../assets/Card6.jpeg";
 import royalvilla from "../assets/royalvilla.jpeg";
 import hero from "../assets/Hero.jpeg";
-import  { FaMapMarkerAlt,
+
+import {
+  FaMapMarkerAlt,
   FaBed,
   FaBath,
   FaSearch,
   FaHeart,
 } from "react-icons/fa";
+
 const propertiesData = [
   {
     id: 1,
@@ -26,7 +30,7 @@ const propertiesData = [
     baths: 3,
     area: "4500 Sq.ft",
     type: "Villa",
-    image:bgimage,
+    image: bgimage,
   },
 
   {
@@ -38,7 +42,7 @@ const propertiesData = [
     baths: 2,
     area: "2200 Sq.ft",
     type: "Apartment",
-    image:card1,
+    image: card1,
   },
 
   {
@@ -50,7 +54,7 @@ const propertiesData = [
     baths: 4,
     area: "5200 Sq.ft",
     type: "Beach House",
-    image:card2,
+    image: card2,
   },
 
   {
@@ -62,7 +66,7 @@ const propertiesData = [
     baths: 5,
     area: "6200 Sq.ft",
     type: "Penthouse",
-    image:card3,
+    image: card3,
   },
 
   {
@@ -74,7 +78,7 @@ const propertiesData = [
     baths: 2,
     area: "2800 Sq.ft",
     type: "Cottage",
-    image:card4,
+    image: card4,
   },
 
   {
@@ -86,7 +90,7 @@ const propertiesData = [
     baths: 5,
     area: "8500 Sq.ft",
     type: "Farmhouse",
-    image:card5,
+    image: card5,
   },
 
   {
@@ -98,7 +102,7 @@ const propertiesData = [
     baths: 1,
     area: "1200 Sq.ft",
     type: "Studio",
-    image:card6,
+    image: card6,
   },
 
   {
@@ -110,7 +114,7 @@ const propertiesData = [
     baths: 8,
     area: "15000 Sq.ft",
     type: "Mansion",
-    image:royalvilla,
+    image: royalvilla,
   },
 ];
 
@@ -137,7 +141,8 @@ const Properties = () => {
           />
 
           <div className="relative z-10">
-            <h1 className="mb-6 text-5xl font-bold md:text-7xl text-gold">
+
+            <h1 className="mb-6 text-5xl font-bold md:text-7xl text-[#F9F295]">
               Find Your Dream Property
             </h1>
 
@@ -146,18 +151,20 @@ const Properties = () => {
               farmhouses, and luxury homes across India with modern amenities.
             </p>
 
-            <button className="px-8 py-4 mt-8 font-semibold text-black transition duration-300 bg-gold rounded-xl hover:scale-105">
+            <button className="px-8 py-4 mt-8 font-semibold text-black transition duration-300 bg-[#F9F295] rounded-xl hover:scale-105 hover:bg-[#f5ec7a]">
               Explore Now
             </button>
+
           </div>
+
         </div>
 
         {/* Search Section */}
         <div className="relative z-20 max-w-6xl px-6 mx-auto -mt-12">
 
-          <div className="p-6 border shadow-2xl bg-grayDark border-gold/20 rounded-2xl">
+          <div className="p-6 border shadow-2xl bg-gray-900 border-[#F9F295]/20 rounded-2xl">
 
-            <div className="flex items-center overflow-hidden border rounded-xl border-gold/20">
+            <div className="flex items-center overflow-hidden border rounded-xl border-[#F9F295]/20">
 
               <input
                 type="text"
@@ -167,13 +174,14 @@ const Properties = () => {
                 className="w-full p-5 text-white bg-black outline-none"
               />
 
-              <button className="px-8 py-5 text-black bg-gold">
+              <button className="px-8 py-5 text-black bg-[#F9F295]">
                 <FaSearch />
               </button>
 
             </div>
 
           </div>
+
         </div>
 
         {/* Property Section */}
@@ -182,16 +190,18 @@ const Properties = () => {
           <div className="flex flex-wrap items-center justify-between gap-4 mb-12">
 
             <div>
-              <h2 className="mb-2 text-4xl font-bold text-gold">
+
+              <h2 className="mb-2 text-4xl font-bold text-[#F9F295]">
                 Featured Properties
               </h2>
 
               <p className="text-gray-400">
                 Handpicked luxury properties for premium living experience.
               </p>
+
             </div>
 
-            <button className="px-6 py-3 transition border rounded-lg border-gold text-gold hover:bg-gold hover:text-black">
+            <button className="px-6 py-3 transition border rounded-lg border-[#F9F295] text-[#F9F295] hover:bg-[#F9F295] hover:text-black">
               View All
             </button>
 
@@ -203,7 +213,7 @@ const Properties = () => {
             {filteredProperties.map((property) => (
               <div
                 key={property.id}
-                className="overflow-hidden transition duration-300 border shadow-xl bg-grayDark rounded-2xl border-gold/10 hover:border-gold hover:-translate-y-2"
+                className="overflow-hidden transition duration-300 border shadow-xl bg-gray-900 rounded-2xl border-[#F9F295]/10 hover:border-[#F9F295] hover:-translate-y-2"
               >
 
                 {/* Image */}
@@ -219,7 +229,7 @@ const Properties = () => {
                     <FaHeart />
                   </button>
 
-                  <span className="absolute px-4 py-1 text-sm font-semibold text-black rounded-full bottom-4 left-4 bg-gold">
+                  <span className="absolute px-4 py-1 text-sm font-semibold text-black rounded-full bottom-4 left-4 bg-[#F9F295]">
                     {property.type}
                   </span>
 
@@ -228,7 +238,7 @@ const Properties = () => {
                 {/* Content */}
                 <div className="p-5">
 
-                  <h3 className="mb-2 text-2xl font-bold text-gold">
+                  <h3 className="mb-2 text-2xl font-bold text-[#F9F295]">
                     {property.title}
                   </h3>
 
@@ -259,17 +269,18 @@ const Properties = () => {
 
                   <div className="flex items-center justify-between">
 
-                    <h4 className="text-2xl font-bold text-gold">
+                    <h4 className="text-2xl font-bold text-[#F9F295]">
                       {property.price}
                     </h4>
 
-                    <button className="px-5 py-2 font-semibold text-black transition rounded-lg bg-gold hover:bg-yellow-400">
+                    <button className="px-5 py-2 font-semibold text-black transition rounded-lg bg-[#F9F295] hover:bg-[#f5ec7a]">
                       Details
                     </button>
 
                   </div>
 
                 </div>
+
               </div>
             ))}
           </div>
@@ -278,7 +289,7 @@ const Properties = () => {
           {filteredProperties.length === 0 && (
             <div className="mt-20 text-center">
 
-              <h2 className="mb-4 text-4xl font-bold text-gold">
+              <h2 className="mb-4 text-4xl font-bold text-[#F9F295]">
                 No Property Found
               </h2>
 
@@ -291,39 +302,40 @@ const Properties = () => {
         </div>
 
         {/* Stats Section */}
-        <div className="px-6 py-20 bg-grayDark">
+        <div className="px-6 py-20 bg-gray-900">
 
           <div className="grid max-w-6xl gap-8 mx-auto text-center md:grid-cols-4">
 
             <div>
-              <h2 className="mb-3 text-5xl font-bold text-gold">
+              <h2 className="mb-3 text-5xl font-bold text-[#F9F295]">
                 500+
               </h2>
               <p className="text-gray-400">Luxury Properties</p>
             </div>
 
             <div>
-              <h2 className="mb-3 text-5xl font-bold text-gold">
+              <h2 className="mb-3 text-5xl font-bold text-[#F9F295]">
                 1200+
               </h2>
               <p className="text-gray-400">Happy Clients</p>
             </div>
 
             <div>
-              <h2 className="mb-3 text-5xl font-bold text-gold">
+              <h2 className="mb-3 text-5xl font-bold text-[#F9F295]">
                 50+
               </h2>
               <p className="text-gray-400">Cities Covered</p>
             </div>
 
             <div>
-              <h2 className="mb-3 text-5xl font-bold text-gold">
+              <h2 className="mb-3 text-5xl font-bold text-[#F9F295]">
                 10+
               </h2>
               <p className="text-gray-400">Years Experience</p>
             </div>
 
           </div>
+
         </div>
 
       </div>

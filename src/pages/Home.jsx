@@ -3,10 +3,13 @@ import HeroSection from "../components/HeroSection";
 import PropertyCard from "../components/PropertyCard";
 import Footer from "../components/Footer";
 
+import { Link } from "react-router-dom";
+
 import first from "../assets/First.jpg";
 import second from "../assets/Second.jpg";
 import third from "../assets/Third.jpg";
 import royalvilla from "../assets/royalvilla.jpeg";
+
 import {
   FaHome,
   FaUsers,
@@ -77,7 +80,7 @@ const Home = () => {
 
         <div className="text-center mb-14">
 
-          <h2 className="mb-5 text-5xl font-bold text-gold">
+          <h2 className="mb-5 text-5xl font-bold text-[#F9F295]">
             Featured Properties
           </h2>
 
@@ -105,14 +108,14 @@ const Home = () => {
       </section>
 
       {/* About Section */}
-      <section className="px-6 py-20 text-white bg-grayDark md:px-12">
+      <section className="px-6 py-20 text-white bg-gray-900 md:px-12">
 
         <div className="grid items-center mx-auto max-w-7xl lg:grid-cols-2 gap-14">
 
           {/* Left Content */}
           <div>
 
-            <h2 className="mb-6 text-5xl font-bold text-gold">
+            <h2 className="mb-6 text-5xl font-bold text-[#F9F295]">
               Find Your Dream Home
             </h2>
 
@@ -128,9 +131,12 @@ const Home = () => {
               that match their lifestyle and future goals.
             </p>
 
-            <button className="px-8 py-4 mt-8 font-semibold text-black transition duration-300 bg-gold rounded-xl hover:scale-105">
+            <Link
+              to="/properties"
+              className="inline-block px-8 py-4 mt-8 font-semibold text-black transition duration-300 bg-[#F9F295] rounded-xl hover:scale-105 hover:bg-[#f5ec7a]"
+            >
               Explore More
-            </button>
+            </Link>
 
           </div>
 
@@ -138,7 +144,7 @@ const Home = () => {
           <div className="overflow-hidden shadow-2xl rounded-3xl">
 
             <img
-              src={royalvilla} 
+              src={royalvilla}
               alt="Luxury Home"
               className="object-cover w-full h-full transition duration-700 hover:scale-110"
             />
@@ -154,9 +160,9 @@ const Home = () => {
 
         <div className="grid gap-10 mx-auto text-center max-w-7xl sm:grid-cols-2 lg:grid-cols-4">
 
-          <div className="p-10 transition border bg-grayDark rounded-2xl border-gold/10 hover:border-gold">
+          <div className="p-10 transition border bg-gray-900 rounded-2xl border-[#F9F295]/10 hover:border-[#F9F295]">
 
-            <div className="flex justify-center mb-5 text-5xl text-gold">
+            <div className="flex justify-center mb-5 text-5xl text-[#F9F295]">
               <FaHome />
             </div>
 
@@ -170,9 +176,9 @@ const Home = () => {
 
           </div>
 
-          <div className="p-10 transition border bg-grayDark rounded-2xl border-gold/10 hover:border-gold">
+          <div className="p-10 transition border bg-gray-900 rounded-2xl border-[#F9F295]/10 hover:border-[#F9F295]">
 
-            <div className="flex justify-center mb-5 text-5xl text-gold">
+            <div className="flex justify-center mb-5 text-5xl text-[#F9F295]">
               <FaUsers />
             </div>
 
@@ -186,9 +192,9 @@ const Home = () => {
 
           </div>
 
-          <div className="p-10 transition border bg-grayDark rounded-2xl border-gold/10 hover:border-gold">
+          <div className="p-10 transition border bg-gray-900 rounded-2xl border-[#F9F295]/10 hover:border-[#F9F295]">
 
-            <div className="flex justify-center mb-5 text-5xl text-gold">
+            <div className="flex justify-center mb-5 text-5xl text-[#F9F295]">
               <FaBuilding />
             </div>
 
@@ -202,9 +208,9 @@ const Home = () => {
 
           </div>
 
-          <div className="p-10 transition border bg-grayDark rounded-2xl border-gold/10 hover:border-gold">
+          <div className="p-10 transition border bg-gray-900 rounded-2xl border-[#F9F295]/10 hover:border-[#F9F295]">
 
-            <div className="flex justify-center mb-5 text-5xl text-gold">
+            <div className="flex justify-center mb-5 text-5xl text-[#F9F295]">
               <FaAward />
             </div>
 
@@ -223,11 +229,11 @@ const Home = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="px-6 py-20 text-white bg-grayDark">
+      <section className="px-6 py-20 text-white bg-gray-900">
 
         <div className="text-center mb-14">
 
-          <h2 className="mb-5 text-5xl font-bold text-gold">
+          <h2 className="mb-5 text-5xl font-bold text-[#F9F295]">
             What Our Clients Say
           </h2>
 
@@ -239,40 +245,40 @@ const Home = () => {
 
         <div className="grid gap-10 mx-auto max-w-7xl md:grid-cols-3">
 
-          <div className="p-8 bg-black border rounded-2xl border-gold/10">
+          <div className="p-8 bg-black border rounded-2xl border-[#F9F295]/10">
 
             <p className="mb-6 leading-7 text-gray-400">
               “Amazing service and beautiful properties. I found my dream villa
               within a week.”
             </p>
 
-            <h3 className="text-xl font-bold text-gold">
+            <h3 className="text-xl font-bold text-[#F9F295]">
               Rahul Sharma
             </h3>
 
           </div>
 
-          <div className="p-8 bg-black border rounded-2xl border-gold/10">
+          <div className="p-8 bg-black border rounded-2xl border-[#F9F295]/10">
 
             <p className="mb-6 leading-7 text-gray-400">
               “Professional team with premium property options. Highly
               recommended for luxury homes.”
             </p>
 
-            <h3 className="text-xl font-bold text-gold">
+            <h3 className="text-xl font-bold text-[#F9F295]">
               Priya Verma
             </h3>
 
           </div>
 
-          <div className="p-8 bg-black border rounded-2xl border-gold/10">
+          <div className="p-8 bg-black border rounded-2xl border-[#F9F295]/10">
 
             <p className="mb-6 leading-7 text-gray-400">
               “Excellent experience from start to finish. Smooth buying process
               and great support.”
             </p>
 
-            <h3 className="text-xl font-bold text-gold">
+            <h3 className="text-xl font-bold text-[#F9F295]">
               Aman Kapoor
             </h3>
 
@@ -285,7 +291,7 @@ const Home = () => {
       {/* CTA Section */}
       <section className="px-6 py-24 text-center text-white bg-black">
 
-        <h2 className="mb-6 text-5xl font-bold text-gold">
+        <h2 className="mb-6 text-5xl font-bold text-[#F9F295]">
           Ready To Find Your Dream Property?
         </h2>
 
@@ -294,9 +300,12 @@ const Home = () => {
           homes today.
         </p>
 
-        <button className="px-10 py-4 font-bold text-black transition duration-300 bg-gold rounded-xl hover:scale-105">
+        <Link
+          to="/contact"
+          className="inline-block px-10 py-4 font-bold text-black transition duration-300 bg-[#F9F295] rounded-xl hover:scale-105 hover:bg-[#f5ec7a]"
+        >
           Contact Us
-        </button>
+        </Link>
 
       </section>
 
@@ -305,4 +314,4 @@ const Home = () => {
   );
 };
 
-export default Home;    
+export default Home;
